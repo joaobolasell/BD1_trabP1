@@ -1,0 +1,87 @@
+#ALUNO JOÃO ALFREDO O BOLASELL
+
+create table torneio(
+    id_torneio number constraint pk_torneio primary key,
+    nome_torneio varchar2(20),
+    data_inicio_torneio date,
+    data_fim_torneio date
+);
+
+create table peixe (
+    id_peixe number constraint pk_peixe primary key, 
+    especie_peixe varchar2(40)
+);
+
+create table equipe(
+    id_equipe number constraint pk_equipe primary key,
+    nome_equipe varchar2(20),
+    local_equipe varchar2(20)
+);
+
+create table pescador(
+    id_pescador number constraint pk_pescador primary key,
+    id_equipe number,
+    nome_pescador varchar2(40),
+    localidade_pescador varchar2(20)
+);
+
+create table embarcacao(
+    id_embarcacao number constraint pk_embarcacao primary key,
+    id_pescador number,
+    tipo_embarcacao varchar2(10),
+    nome_embarcacao varchar(20)
+);
+
+create table torneio_pescador(
+  id_torneio_pescador number constraint pk_torneio_pescador primary key,
+    id_torneio number,
+    id_pescador number
+);
+
+create table captura(
+    id_captura number constraint pk_captura primary key,
+    id_torneio_pescador number,
+    id_peixe number,
+    imagem_captura number,
+    tamanho_captura number,
+    localizacao_captura varchar2(20)    
+);
+
+
+alter table pescador add constraint fk_pescador_id_equipe foreign key(id_equipe) references equipe;
+
+alter table embarcacao add constraint fk_embarcacao_id_pescador foreign key(id_pescador) references pescador;
+
+alter table torneio_pescador add(
+    constraint fk_torneio_pescador_id_torneio foreign key(id_torneio) references torneio,
+    constraint fk_torneio_pescador_id_pescador foreign key(id_pescador) references pescador
+)
+
+alter table captura add(
+	constraint fk_captura_id_torneio_pescador foreign key(id_torneio_pescador) references torneio_pescador,
+    constraint fk_captura_id_peixe foreign key(id_peixe) references peixe
+);
+
+
+create sequence s_torneio start with 100 nocache;
+
+create sequence s_peixe start with 200 nocache;
+
+create sequence s_equipe start with 300 nocache;
+
+create sequence s_pescador start with 400 nocache;
+
+create sequence s_embarcacao start with 500 nocache;
+
+create sequence s_torneio_pescador start with 600 nocache;
+
+create sequence s_captura start with 700 nocache;
+
+
+
+
+
+
+
+
+

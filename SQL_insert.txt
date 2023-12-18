@@ -1,0 +1,40 @@
+#ALUNO JOÃO ALFREDO O BOLASELL
+
+
+insert into torneio (id_torneio, nome_torneio, data_inicio_torneio, data_fim_torneio) values (s_torneio.nextval, 'TKF', to_date('01/11/2023 11:00','dd/mm/yyyy hh24:mi'), to_date('01/03/2024 11:00','dd/mm/yyyy hh24:mi')); 
+
+insert into peixe (id_peixe, especie_peixe) values (s_peixe.nextval, 'tucunare azul');
+insert into peixe (id_peixe, especie_peixe) values (s_peixe.nextval, 'pirarucu');
+insert into peixe (id_peixe, especie_peixe) values (s_peixe.nextval, 'tucunare amarelo');
+insert into peixe (id_peixe, especie_peixe) values (s_peixe.nextval, 'tambaqui');
+
+insert into equipe (id_equipe, nome_equipe, local_equipe) values (s_equipe.nextval, 'TKF', 'Palmas TO');
+insert into equipe (id_equipe, nome_equipe, local_equipe) values (s_equipe.nextval, 'Galera da Pesca', 'Palmas TO');
+insert into equipe (id_equipe, nome_equipe, local_equipe) values (s_equipe.nextval, 'Pesca e Pinga', 'Palmas TO');
+
+insert into pescador (id_pescador, id_equipe, nome_pescador, localidade_pescador) values (s_pescador.nextval, 300, 'joao', 'porto alegre');
+insert into pescador (id_pescador, id_equipe, nome_pescador, localidade_pescador) values (s_pescador.nextval, 300, 'border', 'palmas');
+insert into pescador (id_pescador, id_equipe, nome_pescador, localidade_pescador) values (s_pescador.nextval, 300, 'flavio', 'palmas');
+insert into pescador (id_pescador, id_equipe, nome_pescador, localidade_pescador) values (s_pescador.nextval, 301, 'Uchua', 'palmas');
+insert into pescador (id_pescador, id_equipe, nome_pescador, localidade_pescador) values (s_pescador.nextval, 302, 'paulao', 'palmas');
+
+insert into embarcacao (id_embarcacao, id_pescador, tipo_embarcacao, nome_embarcacao) values (s_embarcacao.nextval, 400, 'caiaque', 'gaucho');
+insert into embarcacao (id_embarcacao, id_pescador, tipo_embarcacao, nome_embarcacao) values (s_embarcacao.nextval, 401, 'caiaque', 'Verdão');
+insert into embarcacao (id_embarcacao, id_pescador, tipo_embarcacao, nome_embarcacao) values (s_embarcacao.nextval, 402, 'caiaque', 'Dourado');
+
+insert into torneio_pescador (id_torneio_pescador, id_torneio, id_pescador) values (s_torneio_pescador.nextval, 100, 400);
+insert into torneio_pescador (id_torneio_pescador, id_torneio, id_pescador) values (s_torneio_pescador.nextval, 100, 401);
+insert into torneio_pescador (id_torneio_pescador, id_torneio, id_pescador) values (s_torneio_pescador.nextval, 100, 402);
+
+insert into captura(id_captura, id_torneio_pescador, id_peixe, imagem_captura, tamanho_captura, localizacao_captura) values (s_captura.nextval, 600, 200, 5, 55.5, 'lago');
+insert into captura(id_captura, id_torneio_pescador, id_peixe, imagem_captura, tamanho_captura, localizacao_captura) values (s_captura.nextval, 600, 200, 6, 35, 'lago');
+insert into captura(id_captura, id_torneio_pescador, id_peixe, imagem_captura, tamanho_captura, localizacao_captura) values (s_captura.nextval, 600, 200, 7, 48, 'lago');
+
+insert into captura(id_captura, id_torneio_pescador, id_peixe, imagem_captura, tamanho_captura, localizacao_captura) values (s_captura.nextval, 601, 200, 8, 50, 'lago');
+insert into captura(id_captura, id_torneio_pescador, id_peixe, imagem_captura, tamanho_captura, localizacao_captura) values (s_captura.nextval, 601, 200, 44, 44, 'lago');
+insert into captura(id_captura, id_torneio_pescador, id_peixe, imagem_captura, tamanho_captura, localizacao_captura) values (s_captura.nextval, 601, 200, 23, 52, 'lago');
+
+insert into captura(id_captura, id_torneio_pescador, id_peixe, imagem_captura, tamanho_captura, localizacao_captura) values (s_captura.nextval, 602, 200, 45, 50, 'lago');
+insert into captura(id_captura, id_torneio_pescador, id_peixe, imagem_captura, tamanho_captura, localizacao_captura) values (s_captura.nextval, 602, 200, 12, 55, 'lago');
+insert into captura(id_captura, id_torneio_pescador, id_peixe, imagem_captura, tamanho_captura, localizacao_captura) values (s_captura.nextval, 602, 200, 17, 42, 'lago');
+

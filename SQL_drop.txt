@@ -1,0 +1,17 @@
+#ALUNO JOÃO ALFREDO O BOLASELL
+
+drop table captura;
+drop table torneio_pescador;
+drop table embarcacao;
+drop table pescador;
+drop table equipe;
+drop table peixe;
+drop table torneio;
+
+drop sequence s_torneio;
+drop sequence s_peixe;
+drop sequence s_equipe;
+drop sequence s_pescador;
+drop sequence s_embarcacao;
+drop sequence s_torneio_pescador;
+drop sequence s_captura;
